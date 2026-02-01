@@ -60,7 +60,22 @@ export interface Product {
   price: number;
   stock: number;
   image: string | null;
+  images?: Array<{ image_url: string }>;
   created_at: string;
+}
+
+
+export interface Community {
+  id: number;
+  name: string;
+  description: string | null;
+  image: string | null;
+  category?: string;
+  member_count?: number;
+  members?: User[];
+  user?: User;
+  created_at: string;
+  updated_at: string;
 }
 
 // ... interface lain ...

@@ -586,8 +586,8 @@ export default function RekrutmenPage() {
                     <div key={reg.id} className="bg-white p-4 rounded-lg border border-gray-200 space-y-3">
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <h4 className="font-semibold text-gray-900">{reg.user.name}</h4>
-                          <p className="text-xs text-gray-600">{reg.user.nim}</p>
+                          <h4 className="font-semibold text-gray-900">{reg.user?.name}</h4>
+                          <p className="text-xs text-gray-600">{reg.user?.nim}</p>
                           <p className="text-xs text-gray-500 mt-1">
                             Divisi: <span className="font-medium">
                               {divisions.map((d: any) => d.name).join(', ')}
@@ -633,7 +633,7 @@ export default function RekrutmenPage() {
                           </>
                         )}
                         <button
-                          onClick={() => handleDeleteRegistration(reg.id, reg.user.name, divisions.map((d: any) => d.name).join(', '))}
+                          onClick={() => handleDeleteRegistration(reg.id, reg.user?.name || 'Unknown', divisions.map((d: any) => d.name).join(', '))}
                           className="flex-1 px-3 py-1.5 bg-red-100 hover:bg-red-200 text-red-700 text-xs font-medium rounded"
                           title="Hapus Pendaftaran"
                         >
